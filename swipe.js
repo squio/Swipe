@@ -18,6 +18,7 @@
   this.index = this.options.startSlide || 0;
   this.speed = this.options.speed || 300;
   this.callback = this.options.callback || function() {};
+  this.beforeSwipe = this.options.beforeSwipe || function() {};
   this.delay = this.options.auto || 0;
 
   // reference dom elements
@@ -96,6 +97,7 @@ Swipe.prototype = {
 
   slide: function(index, duration) {
 
+    this.beforeSwipe(null, index, this.slides[index]);
     var style = this.element.style;
 
     // fallback to default speed
