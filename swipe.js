@@ -212,7 +212,7 @@ Swipe.prototype = {
     // set transition time to 0 for 1-to-1 touch movement
     this.element.style.MozTransitionDuration = this.element.style.webkitTransitionDuration = 0;
     
-    e.stopPropagation();
+//    e.stopPropagation();
   },
 
   onTouchMove: function(e) {
@@ -272,10 +272,9 @@ Swipe.prototype = {
 
       // call slide function with slide end value based on isValidSlide and isPastBounds tests
       this.slide( this.index + ( isValidSlide && !isPastBounds ? (this.deltaX < 0 ? 1 : -1) : 0 ), this.speed );
-
     }
     
-    e.stopPropagation();
+//    e.stopPropagation();
   }
 
 };
